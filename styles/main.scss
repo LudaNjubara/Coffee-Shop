@@ -1,0 +1,81 @@
+@import "variables";
+@import "initialValues";
+@import "responsive";
+@import "animations";
+
+#hero {
+  width: 100%;
+  max-width: 2000px;
+  height: 100vh;
+  overflow: hidden;
+
+  #hero-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+  }
+
+  #hero-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    animation: 0.8s 6s ease-in-out forwards;
+
+    .hero-text-container {
+      position: relative;
+      padding: $sm-padding 0;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+
+      .hero-title {
+        padding: 0 $sm-padding;
+        font-size: 6rem;
+        text-align: center;
+        color: rgb(253, 173, 25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: 0.8s ease-in-out forwards;
+
+        .title-word-container,
+        .title-multiword-container {
+          position: relative;
+          padding: 10px 0;
+          margin: 0 10px;
+          display: inline-block;
+          overflow: hidden;
+
+          .title-word {
+            position: absolute;
+            left: 0;
+            display: block;
+            visibility: hidden;
+          }
+
+          .title-multiword-inner {
+            display: flex;
+            flex-direction: column;
+            height: 135px;
+            overflow: hidden;
+            visibility: hidden;
+            margin: 0 10px;
+
+            .title-multiword {
+              color: #462522;
+              transform: translateY(135px);
+              animation: animateWordInner 3s 2.5s forwards;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#main {
+  height: 100vh;
+}

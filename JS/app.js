@@ -1,14 +1,48 @@
-const circle =
-  "M961,353c25.5,0,50.3,5,73.6,14.8c22.5,9.5,42.7,23.1,60.1,40.5c17.4,17.4,31,37.6,40.5,60.1 c9.9,23.3,14.8,48,14.8,73.6s-5,50.3-14.8,73.6c-9.5,22.5-23.1,42.7-40.5,60.1c-17.4,17.4-37.6,31-60.1,40.5 c-23.3,9.9-48,14.8-73.6,14.8s-50.3-5-73.6-14.8c-22.5-9.5-42.7-23.1-60.1-40.5c-17.4-17.4-31-37.6-40.5-60.1 c-9.9-23.3-14.8-48-14.8-73.6s5-50.3,14.8-73.6c9.5-22.5,23.1-42.7,40.5-60.1c17.4-17.4,37.6-31,60.1-40.5 C910.7,358,935.5,353,961,353 M961,342c-110.5,0-200,89.5-200,200s89.5,200,200,200s200-89.5,200-200S1071.5,342,961,342L961,342z";
+document.addEventListener("DOMContentLoaded", () => {
+  const heroMain = document.querySelector("#hero-main");
+  const heroTitle = document.querySelector(".hero-title");
+  const heroTextContainer = document.querySelector(".hero-text-container");
+  const titleWords = document.querySelectorAll(".title-word");
+  const titleMultiWords = document.querySelectorAll(".title-multiword");
+  const titleWordContainers = document.querySelectorAll(".title-word-container");
+  let delay = 1;
 
-const topLeft =
-  "M213.489,23.34c104.409,0.068,188.995,84.763,188.928,189.172c-0.049,75.892-45.477,144.399-115.368,173.978 c-96.18,40.626-207.084-4.41-247.71-100.59s4.41-207.084,100.59-247.71C163.2,28.342,188.219,23.291,213.489,23.34 M213.489,12.34 c-128.314,1.249-171.832-28.379-200,0c-31.994,32.234,3.423,91.339,0,200c-0.233,7.389-1.014,26.704,5,51c0,0,7.055,28.502,24,55 c21.326,33.348,84.608,95.215,171,94c105.745-1.488,198.471-96.815,200-200c1.08-72.875-43.568-133.593-82-162 c-30.838-22.794-66-32-66-32C241.083,11.95,221.626,12.261,213.489,12.34z";
+  for (let i = 0; i < titleWordContainers.length; i++) {
+    titleWordContainers[i].style.width = titleWords[i].clientWidth + "px";
+    titleWordContainers[i].style.height = titleWords[i].clientHeight + "px";
 
-const topRight =
-  "M389.593,212.913c-0.068,104.409-84.763,188.995-189.172,188.928c-75.892-0.049-144.399-45.477-173.978-115.368 c-40.626-96.18,4.41-207.084,100.59-247.71s207.084,4.41,247.71,100.59C384.591,162.625,389.642,187.644,389.593,212.913 M400.593,212.913c-1.249-128.314,28.379-171.832,0-200c-32.234-31.994-91.339,3.423-200,0c-7.389-0.233-26.704-1.014-51,5 c0,0-28.502,7.055-55,24c-33.348,21.326-95.215,84.608-94,171c1.488,105.745,96.815,198.471,200,200 c72.875,1.08,133.593-43.568,162-82c22.794-30.838,32-66,32-66C400.982,240.508,400.672,221.051,400.593,212.913z";
+    switch (i) {
+      case 0:
+        titleWords[i].style.animation = `animateWordUp 0.3s ${delay}s forwards`;
+        break;
+      case 1:
+        titleWords[i].style.animation = `animateWordDown 0.3s ${delay}s forwards`;
+        break;
+      case 2:
+        titleWords[i].style.animation = `animateWordUp 0.3s ${delay}s forwards`;
+        break;
+      case 3:
+        titleWords[i].style.animation = `animateWordDown 0.3s ${delay}s forwards`;
+        break;
+      case 4:
+        titleWords[i].style.animation = `animateWordUp 0.3s ${delay}s forwards`;
+        break;
+      case 5:
+        titleMultiWords[i].style.animation = `animateWordUp 0.3s ${delay}s forwards`;
+        break;
+      default:
+        break;
+    }
 
-const bottomLeft =
-  "M23.915,199.444C23.983,95.035,108.678,10.449,213.087,10.516c75.892,0.049,144.399,45.477,173.978,115.368 c40.626,96.18-4.41,207.084-100.59,247.71s-207.084-4.41-247.71-100.59C28.917,249.733,23.866,224.713,23.915,199.444 M12.915,199.444c1.249,128.314-28.379,171.832,0,200c32.234,31.994,91.339-3.423,200,0c7.389,0.233,26.704,1.014,51-5 c0,0,28.502-7.055,55-24c33.348-21.326,95.215-84.608,94-171c-1.488-105.745-96.815-198.471-200-200 c-72.875-1.08-133.593,43.568-162,82c-22.794,30.838-32,66-32,66C12.525,171.849,12.836,191.306,12.915,199.444z";
+    delay += 0.3;
+  }
 
-const bottomRight =
-  "M200.019,389.018C95.61,388.95,11.024,304.255,11.092,199.845c0.049-75.892,45.477-144.399,115.368-173.978 c96.18-40.626,207.084,4.41,247.71,100.59s-4.41,207.084-100.59,247.71C250.308,384.016,225.289,389.066,200.019,389.018 M200.019,400.018c128.314-1.249,171.832,28.379,200,0c31.994-32.234-3.423-91.339,0-200c0.233-7.389,1.014-26.704-5-51 c0,0-7.055-28.502-24-55c-21.326-33.348-84.608-95.215-171-94c-105.745,1.488-198.471,96.815-200,200 c-1.08,72.875,43.568,133.593,82,162c30.838,22.794,66,32,66,32C172.424,400.407,191.882,400.097,200.019,400.018z";
+  heroMain.style.animationName = "moveToHeaderPosition";
+  setTimeout(function () {
+    heroTitle.innerHTML = "Welcome to your Cup of Happiness";
+    for (let i = 0; i < titleWordContainers.length; i++) {
+      titleWordContainers[i].style.display = "none";
+    }
+    heroTitle.style.animationName = "reduceFontSize";
+  }, 6000);
+});

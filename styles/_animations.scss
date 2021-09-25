@@ -1,0 +1,75 @@
+@keyframes animateWordUp {
+  from {
+    top: 100px;
+  }
+
+  to {
+    top: 0;
+    visibility: visible;
+  }
+}
+@keyframes animateWordDown {
+  from {
+    top: -100px;
+  }
+
+  to {
+    top: 0;
+    visibility: visible;
+  }
+}
+
+@keyframes animateWordInner {
+  0% {
+    transform: translateY(135px);
+    visibility: visible;
+  }
+
+  20% {
+    transform: translateY(0);
+    color: #e95511;
+  }
+
+  40% {
+    transform: translateY(-145px);
+    color: #f11e1e;
+  }
+
+  60% {
+    transform: translateY(-290px);
+    color: #f121b3;
+  }
+  80% {
+    transform: translateY(-440px);
+    color: #1aeba8;
+  }
+
+  100% {
+    transform: translateY(-440px);
+    visibility: visible;
+    color: #08d492;
+  }
+}
+
+@keyframes moveToHeaderPosition {
+  from {
+    position: absolute;
+  }
+  to {
+    display: flex;
+    position: fixed;
+    transform: translate(0%, 0%);
+    top: 0;
+    left: 0;
+    height: 100px;
+  }
+}
+
+@keyframes reduceFontSize {
+  from {
+    font-size: 6rem;
+  }
+  to {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+}
